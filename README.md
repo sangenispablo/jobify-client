@@ -81,6 +81,7 @@ export default App;
 npm install @tanstack/react-query@4.29.5 @tanstack/react-query-devtools@4.29.6 axios@1.3.6 dayjs@1.11.7 react-icons@4.8.0 react-router-dom@6.10.0 react-toastify@9.1.2 recharts@2.5.0 styled-components@5.3.10
 
 ```
+Aca el auto instala todas las dependencias en un solo comando asi no tiene que detener el server de front. Yo en mi caso voy a ir agregando una por una.
 
 #### Router
 
@@ -90,6 +91,11 @@ npm install @tanstack/react-query@4.29.5 @tanstack/react-query-devtools@4.29.6 a
 - pages as independent entities
 - less need for global state
 - more pages
+
+```sh
+yarn add react-router-dom
+
+```
 
 #### Setup Router
 
@@ -347,6 +353,8 @@ export default Error;
 
 #### Styled Components
 
+El auto prefiere estilizar sus componentes con styled-components, como yo poco sé de css me da lo mismo, asi que vamos a aprender sobre esta forma de estilizar.
+
 - CSS in JS
 - Styled Components
 - have logic and styles in component
@@ -358,6 +366,12 @@ export default Error;
 ```sh
 npm install styled-components@5.3.10
 ```
+
+```sh
+yarn add install styled-components
+```
+
+La ultima version al dia de hoy 03/06/2024 es la 6.1.11, espero que no haya muchos breaking changes.
 
 ```js
 import styled from 'styled-components';
