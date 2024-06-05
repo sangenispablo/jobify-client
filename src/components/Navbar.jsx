@@ -1,12 +1,25 @@
-import { FaHome } from "react-icons/fa";
+import { FaAlignLeft } from "react-icons/fa";
 
 import Wrapper from "../assets/wrappers/Navbar";
+import Logo from "./Logo";
+import { useDashboardContext } from "../pages/DashboardLayout";
 
-export default function Navbar() {
+const Navbar = () => {
+  const { toggleSidebar } = useDashboardContext();
   return (
     <Wrapper>
-      <h2>Navbar</h2>
-      <FaHome />
+      <div className="nav-center">
+        <button type="button" className="toggle-btn" onClick={toggleSidebar}>
+          <FaAlignLeft />
+        </button>
+        <div>
+          <Logo />
+          <h4 className="logo-text">dashboard</h4>
+        </div>
+        <div className="btn-container">toggle/logout</div>
+      </div>
     </Wrapper>
   );
-}
+};
+
+export default Navbar;

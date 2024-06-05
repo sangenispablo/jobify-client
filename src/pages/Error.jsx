@@ -3,9 +3,9 @@ import { Link, useRouteError } from "react-router-dom";
 import img from "../assets/images/not-found.svg";
 import Wrapper from "../assets/wrappers/ErrorPage";
 
-export default function Error() {
-  const error = useRouteError();
+const Error = () => {
   console.log(error.error.message);
+  const error = useRouteError();
   if (error.status === 404) {
     return (
       <Wrapper>
@@ -24,4 +24,6 @@ export default function Error() {
       <Link to="/">back home</Link>
     </div>
   );
-}
+};
+
+export default Error;

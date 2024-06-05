@@ -1,5 +1,5 @@
-export default function Stats() {
-  return (
-    <div>Stats</div>
-  )
-}
+const Stats = () => {
+  return <div>Stats</div>;
+};
+
+export default Stats;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FormRow, Logo } from "../components";
 import Wrapper from "../assets/wrappers/RegisterAndLoginPage";
 
-export default function Register() {
+const Register = () => {
   return (
     <Wrapper>
       <form className="form">
@@ -28,4 +28,6 @@ export default function Register() {
       </form>
     </Wrapper>
   );
-}
+};
+
+export default Register;

@@ -1,5 +1,5 @@
-export default function AllJobs() {
-  return (
-    <div>AllJobs</div>
-  )
-}
+const AllJobs = () => {
+  return <div>AllJobs</div>;
+};
+
+export default AllJobs;

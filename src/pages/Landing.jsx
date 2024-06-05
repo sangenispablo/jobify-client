@@ -4,7 +4,7 @@ import Wrapper from "../assets/wrappers/LandingPage";
 import mainImg from "../assets/images/main.svg";
 import { Logo } from "../components";
 
-export default function Landing() {
+const Landing = () => {
   return (
     <Wrapper>
       <nav>
@@ -34,4 +34,6 @@ export default function Landing() {
       </div>
     </Wrapper>
   );
-}
+};
+
+export default Landing;

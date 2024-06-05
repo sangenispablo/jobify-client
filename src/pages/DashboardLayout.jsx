@@ -1,36 +1,37 @@
-import { createContext, useContext, useState } from "react";
+import { useState, createContext, useContext } from "react";
 import { Outlet } from "react-router-dom";
 
 import Wrapper from "../assets/wrappers/Dashboard";
-import { BigSidebar, Navbar, SmallSidebar } from "../components";
+import { Navbar, BigSidebar, SmallSidebar } from "../components";
 
 const DashboardContext = createContext();
 
-export default function DashboardLayout() {
+const DashboardLayout = () => {
+  // temp
   const user = { name: "john" };
+
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  function toogleDarkTheme() {
-    console.log("toogle dark theme");
-  }
+  const toggleDarkTheme = () => {
+    console.log("toggle dark theme");
+  };
 
-  function toogleSidebar() {
+  const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
-  }
+  };
 
-  async function logoutUser() {
+  const logoutUser = async () => {
     console.log("logout user");
-  }
-
+  };
   return (
     <DashboardContext.Provider
       value={{
         user,
         showSidebar,
         isDarkTheme,
-        toogleDarkTheme,
-        toogleSidebar,
+        toggleDarkTheme,
+        toggleSidebar,
         logoutUser,
       }}
     >
@@ -48,8 +49,8 @@ export default function DashboardLayout() {
       </Wrapper>
     </DashboardContext.Provider>
   );
-}
+};
 
-export function useDashboardContext() {
-  return useContext(DashboardContext);
-}
+export const useDashboardContext = () => useContext(DashboardContext);
+
+export default DashboardLayout;
