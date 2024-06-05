@@ -1,40 +1,12 @@
-import { useState, createContext, useContext } from "react";
 import { Outlet } from "react-router-dom";
 
 import Wrapper from "../assets/wrappers/Dashboard";
 import { Navbar, BigSidebar, SmallSidebar } from "../components";
-
-const DashboardContext = createContext();
+import DashboardProvider from "../contexts/DashboardProvider";
 
 const DashboardLayout = () => {
-  // temp
-  const user = { name: "john" };
-
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-  const toggleDarkTheme = () => {
-    console.log("toggle dark theme");
-  };
-
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
-
-  const logoutUser = async () => {
-    console.log("logout user");
-  };
   return (
-    <DashboardContext.Provider
-      value={{
-        user,
-        showSidebar,
-        isDarkTheme,
-        toggleDarkTheme,
-        toggleSidebar,
-        logoutUser,
-      }}
-    >
+    <DashboardProvider>
       <Wrapper>
         <main className="dashboard">
           <SmallSidebar />
@@ -47,10 +19,8 @@ const DashboardLayout = () => {
           </div>
         </main>
       </Wrapper>
-    </DashboardContext.Provider>
+    </DashboardProvider>
   );
 };
-
-export const useDashboardContext = () => useContext(DashboardContext);
 
 export default DashboardLayout;

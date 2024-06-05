@@ -14,6 +14,10 @@ import {
   Stats,
 } from "./pages";
 
+import { checkDefaultTheme } from "./utils/checkTheme";
+
+checkDefaultTheme();
+
 const router = createBrowserRouter([
   {
     path: "/",
